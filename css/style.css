@@ -69,7 +69,7 @@ main {
 
 .record-info {
     display: none;
-    background-color: rgba(17, 32, 48, 0.8);
+    background-color: rgba(17, 32, 48, 0.85);
     position: absolute;
     top: 51%;
     left: 50%;
