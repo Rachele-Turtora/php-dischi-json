@@ -32,8 +32,25 @@ main {
     height: calc(100% - 100px);
 }
 
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .card {
-    background-color: #1d2d3c;
+    background-color: #112030;
     text-align: center;
     color: white;
+    width: calc(100% / 3 - 40px);
+    margin: 30px 20px;
+    padding: 20px 0;
+}
+
+.card p {
+    margin: 10px 0;
 }

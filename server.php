@@ -1,6 +1,6 @@
 <?php
 
-$dischi = [
+$records = [
     [
         "title" => "New Jersey",
         "author" => "Bon Jovi",
@@ -35,4 +35,4 @@ $dischi = [
 
 header('Content-Type: application.json');
 
-echo json_encode($dischi);
+echo json_encode($records);

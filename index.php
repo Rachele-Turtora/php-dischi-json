@@ -17,7 +17,13 @@
         </header>
         <main>
             <div class="container">
-
+                <div class="row">
+                    <div class="card" v-for="record in records">
+                        <h3>{{record.title}}</h3>
+                        <p>{{record.author}}</p>
+                        <h4>{{record.year}}</h4>
+                    </div>
+                </div>
             </div>
         </main>
     </div>
