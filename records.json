@@ -1,32 +1,38 @@
 [
     {
+        "img": "./img/new_jersey.webp",
         "title": "New Jersey",
         "author": "Bon Jovi",
         "year": 1988
     },
     {
+        "img": "./img/live_at_wembley_86.jpg",
         "title": "Live at Wembley 86",
         "author": "Queen",
         "year": 1992
     },
     {
-        "title": "Ten's Summoner's Tales",
+        "img": "./img/new_jersey.webp",
+        "title": "Ten Summoner's Tales",
         "author": "Sting",
         "year": 1993
     },
     {
+        "img": "./img/steve_gadd_band.webp",
         "title": "Steve Gadd band",
         "author": "Steve Gadd band",
         "year": 2018
     },
     {
+        "img": "./img/brave_new_world.jpg",
         "title": "Brave new World",
-        "author": "Eric Clapton",
+        "author": "Iron Maiden",
         "year": 2000
     },
     {
+        "img": "./img/new_jersey.webp",
         "title": "One more car, one more rider",
-        "author": "Sting",
+        "author": "Eric Clapton",
         "year": 2002
     }
 ]
