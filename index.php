@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" v-cloak>
         <header>
             <div class="logo">
                 <img src="./img/logo.jpg" alt="logo">

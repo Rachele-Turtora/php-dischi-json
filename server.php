@@ -1,6 +1,6 @@
 <?php
 
-$records = [
+/*$records = [
     [
         "title" => "New Jersey",
         "author" => "Bon Jovi",
@@ -31,8 +31,11 @@ $records = [
         "author" => "Sting",
         "year" => 2002
     ]
-];
+];*/
+
+$records = file_get_contents(__DIR__ . '/records.json'); //è una stringa
 
 header('Content-Type: application.json');
 
-echo json_encode($records);
+//echo json_encode($records);
+echo $records;
