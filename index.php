@@ -19,9 +19,10 @@
         <main>
             <div class="container">
                 <div class="row">
-                    <div class="card" v-for="record in records" @click="getRecordById(record.id)">
+                    <div class="card" v-for="record in records">
+                        <button @click="deleteRecord(record.id)">delete</button>
                         <div class="img-card">
-                            <img :src="record.img" alt="">
+                            <img @click="getRecordById(record.id)" :src="record.img" alt="">
                         </div>
                         <h3>{{record.title}}</h3>
                         <p>{{record.author}}</p>

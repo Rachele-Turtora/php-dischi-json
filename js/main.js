@@ -49,6 +49,16 @@ createApp({
         toggleNewRecord() {
             this.newRecord = !this.newRecord;
         },
+        deleteRecord(id) {
+            axios.get(this.urlRecords, {
+                params: {
+                    "action": "delete",
+                    "id": id
+                }
+            }).then((response) => {
+                this.records = response.data;
+            })
+        },
         exit() {
             this.currentRecord = null;
             this.newRecord = false;

@@ -73,6 +73,21 @@ if (isset($_POST['action']) && $_POST['action'] === "create") {
     file_put_contents($json_file, json_encode($result));
 }
 
+// delete
+if (isset($_GET['action']) && $_GET['action'] === "delete") {
+    if (isset($_GET['id'])) {
+        $id_index = array_search($_GET['id'], array_column($records, 'id'));
+
+        if ($id_index !== false) {
+            unset($records[$id_index]);
+            $result = array_values($records);
+        }
+    }
+
+    //salvo new_record nel file json
+    file_put_contents($json_file, json_encode($result));
+}
+
 header('Content-Type: application.json'); //dice al client che sta ricevendo un json
 
 echo json_encode($result);
