@@ -5,7 +5,8 @@ createApp({
         return {
             urlRecords: "http://localhost/php-dischi-json/server.php",
             records: [],
-            currentRecord: null
+            currentRecord: null,
+            newRecord: ""
         }
     },
     methods: {
@@ -17,11 +18,22 @@ createApp({
         getRecordById(id) {
             axios.get(this.urlRecords, {
                 params: {
+                    "action": "read",
                     "id": id
                 }
             }).then((response) => {
                 this.currentRecord = response.data;
-                console.log(this.currentRecord);
+            })
+        },
+        createNewRecord() {
+            const data = {
+                "action": "create",
+                "title": this.newRecord
+            }
+            axios.post(this.urlRecords, data, {
+                headers: { 'Content-Type': 'multipart/form-data' }
+            }).then((response) => {
+                this.records = response.data;
             })
         },
         exit() {

@@ -33,7 +33,6 @@ header {
 
 main {
     background-color: #1d2d3c;
-    height: calc(100% - 80px);
 }
 
 .container {
@@ -114,4 +113,8 @@ main {
 .card-info p {
     margin: 20px 0;
     font-size: 20px;
+}
+
+.new-record {
+    color: white;
 }

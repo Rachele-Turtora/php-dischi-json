@@ -41,6 +41,13 @@
                     </div>
                 </div>
             </div>
+            <div class="new-record">
+                <h3>Add new record</h3>
+                <form action="" @submit.prevent="createNewRecord()">
+                    <label for="record-title">Titolo:</label>
+                    <input type="text" id="record-title" v-model="newRecord">
+                </form>
+            </div>
         </main>
     </div>
 

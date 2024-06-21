@@ -33,22 +33,46 @@
     ]
 ];*/
 
-$data = file_get_contents(__DIR__ . '/records.json'); //è una stringa
+$json_file = __DIR__ . '/records.json';
+
+$data = file_get_contents($json_file); //è una stringa
 
 $records = json_decode($data, true);
 
 $result = $records;
 
 // read
-if (isset($_GET['id'])) {
-    $id_index = array_search($_GET['id'], array_column($records, 'id'));
+if (isset($_GET['action']) && $_GET['action'] === "read") {
+    if (isset($_GET['id'])) {
+        $id_index = array_search($_GET['id'], array_column($records, 'id'));
 
-    if ($id_index !== false) {
-        $result = $records[$id_index];
+        if ($id_index !== false) {
+            $result = $records[$id_index];
+        }
     }
+}
+
+//create
+if (isset($_POST['action']) && $_POST['action'] === "create") {
+
+    $new_record = [
+        "img" => "Non pervenuta",
+        "title" => $_POST['title'],
+        "author" => "Non pervenuto",
+        "year" => 3000,
+        "id" => rand(20, 30)
+    ];
+
+    if ($records && count($records)) {
+        $result = [...$records, $new_record];
+    } else {
+        $result = [$new_record];
+    }
+
+    //salvo new_record nel file json
+    file_put_contents($json_file, json_encode($result));
 }
 
 header('Content-Type: application.json'); //dice al client che sta ricevendo un json
 
-//echo json_encode($records);
 echo json_encode($result);
