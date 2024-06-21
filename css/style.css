@@ -25,7 +25,7 @@ img {
 }
 
 header {
-    background-color: #06131f;
+    background-color: black;
     height: 80px;
     display: flex;
     align-items: center;
@@ -45,6 +45,7 @@ header button {
 
 main {
     background-color: #1d2d3c;
+    min-height: 100%;
 }
 
 .container {
@@ -66,6 +67,25 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+}
+
+.card .delete {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    padding: 3px 12px;
+    background-color: rgb(2, 155, 2, 0.6);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 22px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.card .delete:hover {
+    background-color: rgb(2, 155, 2);
+    color: rgba(255, 255, 255);
 }
 
 .card p {
@@ -173,7 +193,6 @@ main {
     border-radius: 5px;
     cursor: pointer;
     font-size: 18px;
-    text-align: center;
 }
 
 .new-record .add:hover {

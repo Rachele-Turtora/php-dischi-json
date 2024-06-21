@@ -29,6 +29,7 @@ createApp({
             })
         },
         createNewRecord() {
+            this.currentRecord = null;
             const data = {
                 "action": "create",
                 "title": this.newRecordTitle,
@@ -50,6 +51,7 @@ createApp({
             this.newRecord = !this.newRecord;
         },
         deleteRecord(id) {
+            this.currentRecord = null; // serve per non far comparire div.record-info
             axios.get(this.urlRecords, {
                 params: {
                     "action": "delete",
