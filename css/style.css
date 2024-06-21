@@ -68,7 +68,6 @@ main {
 }
 
 .record-info {
-    display: none;
     background-color: rgba(17, 32, 48, 0.85);
     position: absolute;
     top: 51%;
@@ -77,10 +76,6 @@ main {
     width: 75%;
     height: 83%;
     margin: 30px;
-}
-
-.record-info.display {
-    display: block;
 }
 
 .container-info {
@@ -111,11 +106,12 @@ main {
 }
 
 .img-card-info {
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 170px;
     margin-bottom: 30px;
 }
 
 .card-info p {
     margin: 20px 0;
+    font-size: 20px;
 }

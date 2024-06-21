@@ -33,9 +33,22 @@
     ]
 ];*/
 
-$records = file_get_contents(__DIR__ . '/records.json'); //è una stringa
+$data = file_get_contents(__DIR__ . '/records.json'); //è una stringa
 
-header('Content-Type: application.json');
+$records = json_decode($data, true);
+
+$result = $records;
+
+// read
+if (isset($_GET['id'])) {
+    $id_index = array_search($_GET['id'], array_column($records, 'id'));
+
+    if ($id_index !== false) {
+        $result = $records[$id_index];
+    }
+}
+
+header('Content-Type: application.json'); //dice al client che sta ricevendo un json
 
 //echo json_encode($records);
-echo $records;
+echo json_encode($result);
