@@ -58,8 +58,8 @@ if (isset($_POST['action']) && $_POST['action'] === "create") {
     $new_record = [
         "img" => "Non pervenuta",
         "title" => $_POST['title'],
-        "author" => "Non pervenuto",
-        "year" => 3000,
+        "author" => $_POST['author'],
+        "year" => $_POST['year'],
         "id" => rand(20, 30)
     ];
 

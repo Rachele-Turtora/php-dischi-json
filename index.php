@@ -14,6 +14,7 @@
             <div class="logo">
                 <img src="./img/logo.jpg" alt="logo">
             </div>
+            <button @click="toggleNewRecord()">Create</button>
         </header>
         <main>
             <div class="container">
@@ -41,12 +42,26 @@
                     </div>
                 </div>
             </div>
-            <div class="new-record">
-                <h3>Add new record</h3>
-                <form action="" @submit.prevent="createNewRecord()">
-                    <label for="record-title">Titolo:</label>
-                    <input type="text" id="record-title" v-model="newRecord">
-                </form>
+            <div v-if="newRecord" class="new-record">
+                <div class="container-new-record">
+                    <button class="exit" @click="exit()">x</button>
+                    <h3>Add new record</h3>
+                    <form action="" @submit.prevent="createNewRecord()">
+                        <div class="new-record-input">
+                            <label for="record-title">Titolo:</label>
+                            <input type="text" id="record-title" v-model="newRecordTitle">
+                        </div>
+                        <div class="new-record-input">
+                            <label for="record-title">Autore:</label>
+                            <input type="text" id="record-title" v-model="newRecordAuthor">
+                        </div>
+                        <div class="new-record-input">
+                            <label for="record-title">Anno:</label>
+                            <input type="text" id="record-title" v-model="newRecordYear">
+                        </div>
+                        <button class="add">Add</button>
+                    </form>
+                </div>
             </div>
         </main>
     </div>

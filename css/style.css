@@ -29,6 +29,18 @@ header {
     height: 80px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+}
+
+header button {
+    margin-right: 40px;
+    padding: 10px;
+    background-color: green;
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
 }
 
 main {
@@ -66,21 +78,33 @@ main {
     margin-bottom: 20px;
 }
 
-.record-info {
+.record-info,
+.new-record {
     background-color: rgba(17, 32, 48, 0.85);
     position: absolute;
     top: 51%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 75%;
-    height: 83%;
     margin: 30px;
 }
 
-.container-info {
+.record-info {
+    width: 75%;
+    height: 83%;
+}
+
+.new-record {
+    width: 40%;
+    height: 65%;
+    color: white;
+}
+
+.container-info,
+.container-new-record {
     height: 100%;
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -115,6 +139,44 @@ main {
     font-size: 20px;
 }
 
-.new-record {
+.new-record h3 {
+    font-size: 24px;
+}
+
+.new-record-input {
+    display: flex;
+    margin: 10px 0;
+}
+
+.new-record-input input {
+    background-color: transparent;
+    border: 1px solid white;
     color: white;
+    border-radius: 5px;
+}
+
+.new-record-input label {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.new-record form {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-record .add {
+    padding: 10px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+}
+
+.new-record .add:hover {
+    background-color: white;
+    color: rgb(17, 32, 48);
 }
