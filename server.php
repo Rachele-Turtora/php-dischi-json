@@ -66,7 +66,7 @@ if (isset($_POST['action']) && $_POST['action'] === "create") {
         "title" => $_POST['title'],
         "author" => $_POST['author'],
         "year" => $_POST['year'],
-        "id" => rand(20, 30)
+        "id" => generateId($result)
     ];
 
     if ($records && count($records)) {
