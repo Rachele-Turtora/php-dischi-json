@@ -33,6 +33,8 @@
     ]
 ];*/
 
+require_once __DIR__ . '/functions.php';
+
 $json_file = __DIR__ . '/records.json';
 
 $data = file_get_contents($json_file); //è una stringa
@@ -40,6 +42,10 @@ $data = file_get_contents($json_file); //è una stringa
 $records = json_decode($data, true);
 
 $result = $records;
+
+if ($result) {
+    $result = array_map('GetInfoForHomepage', $result);
+}
 
 // read
 if (isset($_GET['action']) && $_GET['action'] === "read") {
@@ -71,6 +77,7 @@ if (isset($_POST['action']) && $_POST['action'] === "create") {
 
     //salvo new_record nel file json
     file_put_contents($json_file, json_encode($result));
+    $result = array_map('getInfoForHomepage', $result);
 }
 
 // delete
@@ -86,6 +93,7 @@ if (isset($_GET['action']) && $_GET['action'] === "delete") {
 
     //salvo new_record nel file json
     file_put_contents($json_file, json_encode($result));
+    $result = array_map('getInfoForHomepage', $result);
 }
 
 header('Content-Type: application.json'); //dice al client che sta ricevendo un json

@@ -19,14 +19,13 @@
         <main>
             <div class="container">
                 <div class="row">
-                    <div class="card" v-for="record in records" @click="getRecordById(record.id)">
-                        <button class="delete" @click.stop="deleteRecord(record.id)">-</button>
+                    <div class="card" v-for="record in records" @click="getRecordById(record.cardId)">
+                        <button class="delete" @click.stop="deleteRecord(record.cardId)">-</button>
                         <div class="img-card">
-                            <img :src="record.img" alt="">
+                            <img :src="record.cardImg" alt="">
                         </div>
-                        <h3>{{record.title}}</h3>
-                        <p>{{record.author}}</p>
-                        <h4>{{record.year}}</h4>
+                        <h3>{{record.cardTitle}}</h3>
+                        <p>{{record.cardAuthor}}</p>
                     </div>
                 </div>
             </div>

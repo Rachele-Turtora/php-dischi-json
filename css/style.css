@@ -25,11 +25,14 @@ img {
 }
 
 header {
-    background-color: black;
+    background-color: #181413;
     height: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
 }
 
 header button {
@@ -46,6 +49,7 @@ header button {
 main {
     background-color: #1d2d3c;
     min-height: 100%;
+    padding-top: 80px;
 }
 
 .container {
